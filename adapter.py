@@ -20,7 +20,7 @@ class MphToKphSpeedometerAdapter:
 
 
 class CarDisplay:
-    """TODO: change to take in the SpeedometerAdapter instead of the Speedometer"""
+    """TODO: change to take in the MphtoKphSpeedometerAdapter instead of the Speedometer"""
 
     def __init__(self, speedometer: MphSpeedometer):
         self.speedometer = speedometer
@@ -28,3 +28,10 @@ class CarDisplay:
     def show_speed(self):
         speed = self.speedometer.get_speed()
         print(f'Speed: {speed}')
+
+
+if __name__ == '__main__':
+    """TODO: change as needed for your new adapter"""
+    speedometer = MphSpeedometer()
+    car_display = CarDisplay(speedometer)
+    car_display.show_speed()
