@@ -4,6 +4,7 @@ import urllib.request
 ### SINGLETON PATTERN: USING GLOBAL VARIABLE ###
 _URL_FETCHER_SINGLETON_INSTANCE = None
 
+
 class URLFetcher:
     """Note: this class should ONLY be used via get_url_fetcher method!"""
 
@@ -26,20 +27,19 @@ def get_url_fetcher():
     return _URL_FETCHER_SINGLETON_INSTANCE
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(URLFetcher() is URLFetcher())
 
 
-
 ################## SINGLETON PATTERN: USING METACLASS #####################
+
 
 class SingletonType(type):
     _instances = {}
 
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
-            cls._instances[cls] = super(SingletonType,
-                                        cls).__call__(*args, **kwargs)
+            cls._instances[cls] = super(SingletonType, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
 
 
@@ -55,4 +55,4 @@ class URLFetcherSingleton(metaclass=SingletonType):
                 self.urls = urls
 
     def dump_url_registry(self):
-        return ', '.join(self.urls)
+        return ", ".join(self.urls)

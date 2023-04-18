@@ -28,6 +28,7 @@ class PublisherInterface(metaclass=ABCMeta):
 
 class Publisher(PublisherInterface):
     """This class represents Concrete Subject/Publisher"""
+
     raise NotImplementedError("TODO implement!")
 
 
@@ -51,7 +52,7 @@ class Subscriber(SubscriberInterface):
         print(f"Observer id:{id(self)} received {args}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # The Client Code
     publisher = Publisher()
     subscriber_a = Subscriber(publisher)

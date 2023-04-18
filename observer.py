@@ -10,8 +10,8 @@ from abc import ABCMeta, abstractmethod
 class PublisherInterface(metaclass=ABCMeta):
     """This class represents The Publisher/Subject Interface
 
-     A class that has a metaclass derived from ABCMeta cannot be instantiated unless all
-      of its abstract methods and properties are overridden
+    A class that has a metaclass derived from ABCMeta cannot be instantiated unless all
+     of its abstract methods and properties are overridden
 
     """
 
@@ -59,12 +59,13 @@ class SubscriberInterface(metaclass=ABCMeta):
 
 class Subscriber(SubscriberInterface):
     """This is a Concrete Observer/Subscriber"""
+
     def notify(self, publisher, *args):
         print(f"Observable (publisher) is: {publisher}")
         print(f"Observer (subscriber) id:{id(self)} received {args}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # The Client Code
     publisher = Publisher()
     subscriber_a = Subscriber()
@@ -73,4 +74,6 @@ if __name__ == '__main__':
     publisher.subscribe(subscriber_b)
     publisher.notify("First Notification", [1, 2, 3])  # TWO SUBSCRIBERS GET NOTIFIED
     publisher.unsubscribe(subscriber_b)
-    publisher.notify("Second Notification", {"A": 1, "B": 2, "C": 3})  # ONE SUBSCRIBER GETS NOTIFIED
+    publisher.notify(
+        "Second Notification", {"A": 1, "B": 2, "C": 3}
+    )  # ONE SUBSCRIBER GETS NOTIFIED

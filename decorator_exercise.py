@@ -21,7 +21,7 @@ def printer(msg1, msg2, msg3):
     print(msg3)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     printer("i love python", "1234", "abcd")
 """
 Desired Behavior:

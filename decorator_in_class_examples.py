@@ -1,7 +1,6 @@
 from typing import Callable
 
 
-
 # Taking a function as an argument to a function:
 def add(x, y):
     return x + y
@@ -78,6 +77,7 @@ ordinary()
 
 # Examples of decorators that are actually useful
 
+
 def smart_divide(func):
     def inner(a, b):
         print("I am going to divide", a, "and", b)
@@ -88,6 +88,7 @@ def smart_divide(func):
         return func(a, b)
 
     return inner
+
 
 @smart_divide
 def divide(a, b):

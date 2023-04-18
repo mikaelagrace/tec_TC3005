@@ -4,6 +4,7 @@ class MyMeta(type):
     Assigns the custom attribute attr to the class, with a value of 100
     Returns the newly created class
     """
+
     def __new__(cls, name, bases, dct):
         new_instance = object.__new__(cls)
         new_instance.attr = 100
@@ -13,9 +14,6 @@ class MyMeta(type):
 class MyClass(metaclass=MyMeta):
     pass
 
+
 class MySubclass(MyClass):
     pass
-
-
-
-

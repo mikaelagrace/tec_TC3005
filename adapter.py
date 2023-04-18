@@ -16,7 +16,7 @@ class MphSpeedometer:
 
 
 class MphToKphSpeedometerAdapter:
-    raise NotImplementedError('Implement me!')
+    raise NotImplementedError("Implement me!")
 
 
 class CarDisplay:
@@ -27,10 +27,10 @@ class CarDisplay:
 
     def show_speed(self):
         speed = self.speedometer.get_speed()
-        print(f'Speed: {speed}')
+        print(f"Speed: {speed}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     """TODO: change as needed for your new adapter"""
     speedometer = MphSpeedometer()
     car_display = CarDisplay(speedometer)
